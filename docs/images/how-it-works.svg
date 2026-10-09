@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<rect width="1200" height="620" rx="24" fill="#101722"/>
+<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">
+<text x="50" y="60" fill="white" font-size="30" font-weight="700">Meeting Mode: one click to a clean desktop</text>
+<text x="50" y="92" fill="#adbacb" font-size="17">Illustration of the app’s behavior • your wallpaper and settings stay unchanged</text>
+<text x="50" y="140" fill="#adbacb" font-size="19">BEFORE</text>
+<text x="650" y="140" fill="#65dfb0" font-size="19">MEETING MODE ACTIVE</text>
+<rect x="50" y="160" width="500" height="310" rx="14" fill="#608ca6"/>
+<rect x="650" y="160" width="500" height="310" rx="14" fill="#000"/>
+<path d="M50 390 L200 255 L330 385 L450 285 L550 370 V456 Q550 470 536 470 H64 Q50 470 50 456Z" fill="#416777"/>
+<g fill="#15202c"><rect x="50" y="160" width="500" height="28" rx="10"/><rect x="650" y="160" width="500" height="28" rx="10"/></g>
+<g fill="#d8e1eb" font-size="12"><text x="68" y="179">Finder</text><text x="668" y="179">Finder</text></g>
+<g stroke="#fff" stroke-width="2" fill="none"><rect x="503" y="168" width="15" height="11" rx="2"/><path d="M519 171 L526 167 V181 L519 177Z"/></g>
+<g fill="#65dfb0"><rect x="1103" y="168" width="15" height="11" rx="2"/><path d="M1119 171 L1126 167 V181 L1119 177Z"/></g>
+<rect x="75" y="212" width="115" height="75" rx="14" fill="#dce8f0"/>
+<text x="90" y="239" font-size="13" fill="#35495a">Widget</text><text x="90" y="271" font-size="26" fill="#35495a">10:30</text>
+<path d="M480 220 H516 V266 H480Z" fill="#f5f8fa"/><text x="471" y="288" font-size="12" fill="white">Notes.txt</text>
+<g><rect x="215" y="255" width="220" height="155" rx="10" fill="#f0f3f8"/><rect x="815" y="255" width="220" height="155" rx="10" fill="#f0f3f8"/></g>
+<g fill="#ccd6e2"><rect x="215" y="255" width="220" height="25" rx="10"/><rect x="815" y="255" width="220" height="25" rx="10"/></g>
+<g fill="#35495a" font-size="17"><text x="244" y="321">Your app window</text><text x="844" y="321">Your app window</text></g>
+<g fill="#8294a8"><rect x="245" y="340" width="160" height="6" rx="3"/><rect x="245" y="358" width="115" height="6" rx="3"/><rect x="845" y="340" width="160" height="6" rx="3"/><rect x="845" y="358" width="115" height="6" rx="3"/></g>
+<path d="M576 310 H617 M603 295 L619 310 L603 325" stroke="#65dfb0" stroke-width="5" fill="none"/>
+<g font-size="17" fill="#d8e1eb"><text x="50" y="510">1. Click the camera in your menu bar</text><text x="50" y="542">2. Select “Start Meeting Mode”</text><text x="650" y="510">Black cover hides desktop items and widgets</text><text x="650" y="542">“End Meeting Mode” brings your desktop back</text></g>
+<text x="50" y="591" fill="#adbacb" font-size="15">Desktop clicks pass through • no wallpaper changes • no Focus or notification blocking</text>
+</g></svg>

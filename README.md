@@ -4,6 +4,12 @@
 
 Meeting Mode is a standalone native macOS menu-bar app built with Swift and AppKit. It temporarily covers desktop icons and widgets with black windows behind your applications, without modifying wallpaper or Finder preferences.
 
+## How it works
+
+![Before and after: Meeting Mode covers desktop icons and widgets with black while application windows remain visible](docs/images/how-it-works.svg)
+
+*Illustration of the behavior, not a captured app screenshot.*
+
 ## Use
 
 1. Install the `.pkg` into Applications and open **Meeting Mode**.
