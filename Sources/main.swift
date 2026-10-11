@@ -6,6 +6,7 @@ final class App: NSObject, NSApplicationDelegate {
     var session: Session?
     var windows: [NSWindow] = []
     var item: NSStatusItem!
+    var catMode = UserDefaults.standard.bool(forKey: "catMode")
     var busy = false
     var timer: Timer?
     var hideDesktop = UserDefaults.standard.object(forKey: "hideDesktop") as? Bool ?? true
@@ -40,6 +41,8 @@ final class App: NSObject, NSApplicationDelegate {
         toggle.target = self; toggle.isEnabled = !busy
         let desktop = menu.addItem(withTitle: "Hide desktop icons and widgets", action: #selector(toggleDesktop), keyEquivalent: "")
         desktop.target = self; desktop.state = hideDesktop ? .on : .off; desktop.isEnabled = session == nil && !busy
+        let cat = menu.addItem(withTitle: "Cat Mode", action: #selector(toggleCat), keyEquivalent: "")
+        cat.target = self; cat.state = catMode ? .on : .off; cat.isEnabled = !busy
         let login = menu.addItem(withTitle: "Open at login", action: #selector(toggleLogin), keyEquivalent: "")
         login.target = self; login.state = SMAppService.mainApp.status == .enabled ? .on : .off
         menu.addItem(.separator())
@@ -48,6 +51,25 @@ final class App: NSObject, NSApplicationDelegate {
         item.menu = menu
     }
     @objc func toggleDesktop() { hideDesktop.toggle(); UserDefaults.standard.set(hideDesktop, forKey: "hideDesktop"); refresh() }
+    @objc func toggleCat() {
+        catMode.toggle()
+        UserDefaults.standard.set(catMode, forKey: "catMode")
+        for window in windows { if let view = window.contentView { updateCat(in: view) } }
+        refresh()
+    }
+    func updateCat(in view: NSView) {
+        view.subviews.forEach { $0.removeFromSuperview() }
+        guard catMode, let url = Bundle.main.url(forResource: "meeting-cat", withExtension: "png"),
+              let image = NSImage(contentsOf: url) else { return }
+        let height = min(460, view.bounds.height * 0.55)
+        let width = min(view.bounds.width * 0.6, height * image.size.width / image.size.height)
+        let imageView = NSImageView(frame: NSRect(x: (view.bounds.width - width) / 2,
+            y: (view.bounds.height - height) / 2, width: width, height: height))
+        imageView.image = image
+        imageView.imageScaling = .scaleProportionallyUpOrDown
+        imageView.autoresizingMask = [.minXMargin, .maxXMargin, .minYMargin, .maxYMargin]
+        view.addSubview(imageView)
+    }
     @objc func toggleLogin() {
         do {
             if SMAppService.mainApp.status == .enabled { try SMAppService.mainApp.unregister() }
@@ -89,6 +111,7 @@ final class App: NSObject, NSApplicationDelegate {
             view.layer?.backgroundColor = NSColor.black.cgColor
             window.backgroundColor = .black
             window.isOpaque = true
+            updateCat(in: view)
             window.contentView = view; window.orderFrontRegardless(); windows.append(window)
         }
     }
