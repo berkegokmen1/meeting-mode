@@ -10,6 +10,12 @@ Meeting Mode is a standalone native macOS menu-bar app built with Swift and AppK
 
 *Illustration of the behavior, not a captured app screenshot.*
 
+## Cat Mode
+
+![Cat Mode: a cat wearing a headset attends a video call above the words In a meeting, centered on a black desktop](docs/images/cat-mode-preview.png)
+
+*Rendered preview using the app’s bundled artwork and desktop layout, not a live screen capture.* Enable **Cat Mode** in the menu to show it; toggle it off for a plain black desktop.
+
 ## Use
 
 1. Install the `.pkg` into Applications and open **Meeting Mode**.
