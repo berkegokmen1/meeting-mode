@@ -13,11 +13,13 @@ Meeting Mode is a standalone native macOS menu-bar app built with Swift and AppK
 ## Use
 
 1. Install the `.pkg` into Applications and open **Meeting Mode**.
-2. Click the camera icon in the top menu bar.
+2. The first launch shows a welcome dialog with Start, desktop hiding, Cat Mode, and Quit controls. Afterward, click the camera icon in the top menu bar.
 3. Leave **Hide desktop icons and widgets** checked and select **Start Meeting Mode**.
 4. Select **End Meeting Mode** to remove the covers. **Quit** also ends the session.
 
 **Cat Mode** optionally shows a realistic cat attending a meeting on the black desktop. It is off by default, remembers your choice, and can be toggled during a session. It appears on each covered display; it requires desktop hiding to be enabled.
+
+If the camera icon is hidden behind the notch or crowded menu-bar items, reopen Meeting Mode from Applications while inactive to show its controls. Reopening during an active meeting stays quiet.
 
 The camera fills in while active, and the menu shows elapsed minutes. **Open at login** is optional and disabled by default. Covers let mouse clicks through so macOS can handle clicking the desktop after a Show Desktop hot corner.
 
@@ -30,7 +32,7 @@ Requires Apple Silicon, macOS 13 or later, and Xcode Command Line Tools. No thir
 ./scripts/build.sh
 ```
 
-The build creates `build/release/Meeting Mode.app` and `build/MeetingMode-0.1.4.pkg`. The installer installs into `/Applications`. Quit any running copy before updating, then reopen the installed copy. Avoid running both a build copy and the installed copy simultaneously.
+The build creates `build/release/Meeting Mode.app` and `build/MeetingMode-0.1.5.pkg`. The installer installs into `/Applications`. Quit any running copy before updating, then reopen the installed copy. Avoid running both a build copy and the installed copy simultaneously.
 
 The app is ad-hoc signed; the installer is unsigned and not notarized. Developer ID signing and notarization are needed for normal external distribution.
 
